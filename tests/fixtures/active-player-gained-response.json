@@ -1,0 +1,1988 @@
+{
+  "startsAt": null,
+  "endsAt": null,
+  "data": {
+    "skills": {
+      "overall": {
+        "metric": "overall",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "attack": {
+        "metric": "attack",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "defence": {
+        "metric": "defence",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "strength": {
+        "metric": "strength",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "hitpoints": {
+        "metric": "hitpoints",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "ranged": {
+        "metric": "ranged",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "prayer": {
+        "metric": "prayer",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "magic": {
+        "metric": "magic",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "cooking": {
+        "metric": "cooking",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "woodcutting": {
+        "metric": "woodcutting",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "fletching": {
+        "metric": "fletching",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "fishing": {
+        "metric": "fishing",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "firemaking": {
+        "metric": "firemaking",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "crafting": {
+        "metric": "crafting",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "smithing": {
+        "metric": "smithing",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "mining": {
+        "metric": "mining",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "herblore": {
+        "metric": "herblore",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "agility": {
+        "metric": "agility",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "thieving": {
+        "metric": "thieving",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "slayer": {
+        "metric": "slayer",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "farming": {
+        "metric": "farming",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "runecrafting": {
+        "metric": "runecrafting",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "hunter": {
+        "metric": "hunter",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "construction": {
+        "metric": "construction",
+        "ehp": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "level": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "experience": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      }
+    },
+    "bosses": {
+      "abyssal_sire": {
+        "metric": "abyssal_sire",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "alchemical_hydra": {
+        "metric": "alchemical_hydra",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "amoxliatl": {
+        "metric": "amoxliatl",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "araxxor": {
+        "metric": "araxxor",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "artio": {
+        "metric": "artio",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "barrows_chests": {
+        "metric": "barrows_chests",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "bryophyta": {
+        "metric": "bryophyta",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "callisto": {
+        "metric": "callisto",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "calvarion": {
+        "metric": "calvarion",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "cerberus": {
+        "metric": "cerberus",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "chambers_of_xeric": {
+        "metric": "chambers_of_xeric",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "chambers_of_xeric_challenge_mode": {
+        "metric": "chambers_of_xeric_challenge_mode",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "chaos_elemental": {
+        "metric": "chaos_elemental",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "chaos_fanatic": {
+        "metric": "chaos_fanatic",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "commander_zilyana": {
+        "metric": "commander_zilyana",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "corporeal_beast": {
+        "metric": "corporeal_beast",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "crazy_archaeologist": {
+        "metric": "crazy_archaeologist",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "dagannoth_prime": {
+        "metric": "dagannoth_prime",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "dagannoth_rex": {
+        "metric": "dagannoth_rex",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "dagannoth_supreme": {
+        "metric": "dagannoth_supreme",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "deranged_archaeologist": {
+        "metric": "deranged_archaeologist",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "duke_sucellus": {
+        "metric": "duke_sucellus",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "general_graardor": {
+        "metric": "general_graardor",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "giant_mole": {
+        "metric": "giant_mole",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "grotesque_guardians": {
+        "metric": "grotesque_guardians",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "hespori": {
+        "metric": "hespori",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "kalphite_queen": {
+        "metric": "kalphite_queen",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "king_black_dragon": {
+        "metric": "king_black_dragon",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "kraken": {
+        "metric": "kraken",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "kreearra": {
+        "metric": "kreearra",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "kril_tsutsaroth": {
+        "metric": "kril_tsutsaroth",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "lunar_chests": {
+        "metric": "lunar_chests",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "mimic": {
+        "metric": "mimic",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "nex": {
+        "metric": "nex",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "nightmare": {
+        "metric": "nightmare",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "phosanis_nightmare": {
+        "metric": "phosanis_nightmare",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "obor": {
+        "metric": "obor",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "phantom_muspah": {
+        "metric": "phantom_muspah",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "sarachnis": {
+        "metric": "sarachnis",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "scorpia": {
+        "metric": "scorpia",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "scurrius": {
+        "metric": "scurrius",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "skotizo": {
+        "metric": "skotizo",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "sol_heredit": {
+        "metric": "sol_heredit",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "spindel": {
+        "metric": "spindel",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "tempoross": {
+        "metric": "tempoross",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "the_gauntlet": {
+        "metric": "the_gauntlet",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "the_corrupted_gauntlet": {
+        "metric": "the_corrupted_gauntlet",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "the_hueycoatl": {
+        "metric": "the_hueycoatl",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "the_leviathan": {
+        "metric": "the_leviathan",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "the_royal_titans": {
+        "metric": "the_royal_titans",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "the_whisperer": {
+        "metric": "the_whisperer",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "theatre_of_blood": {
+        "metric": "theatre_of_blood",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "theatre_of_blood_hard_mode": {
+        "metric": "theatre_of_blood_hard_mode",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "thermonuclear_smoke_devil": {
+        "metric": "thermonuclear_smoke_devil",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "tombs_of_amascut": {
+        "metric": "tombs_of_amascut",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "tombs_of_amascut_expert": {
+        "metric": "tombs_of_amascut_expert",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "tzkal_zuk": {
+        "metric": "tzkal_zuk",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "tztok_jad": {
+        "metric": "tztok_jad",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "vardorvis": {
+        "metric": "vardorvis",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "venenatis": {
+        "metric": "venenatis",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "vetion": {
+        "metric": "vetion",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "vorkath": {
+        "metric": "vorkath",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "wintertodt": {
+        "metric": "wintertodt",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "yama": {
+        "metric": "yama",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "zalcano": {
+        "metric": "zalcano",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "zulrah": {
+        "metric": "zulrah",
+        "ehb": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "kills": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      }
+    },
+    "activities": {
+      "league_points": {
+        "metric": "league_points",
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "score": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "bounty_hunter_hunter": {
+        "metric": "bounty_hunter_hunter",
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "score": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "bounty_hunter_rogue": {
+        "metric": "bounty_hunter_rogue",
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "score": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "clue_scrolls_all": {
+        "metric": "clue_scrolls_all",
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "score": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "clue_scrolls_beginner": {
+        "metric": "clue_scrolls_beginner",
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "score": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "clue_scrolls_easy": {
+        "metric": "clue_scrolls_easy",
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "score": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "clue_scrolls_medium": {
+        "metric": "clue_scrolls_medium",
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "score": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "clue_scrolls_hard": {
+        "metric": "clue_scrolls_hard",
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "score": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "clue_scrolls_elite": {
+        "metric": "clue_scrolls_elite",
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "score": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "clue_scrolls_master": {
+        "metric": "clue_scrolls_master",
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "score": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "last_man_standing": {
+        "metric": "last_man_standing",
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "score": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "pvp_arena": {
+        "metric": "pvp_arena",
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "score": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "soul_wars_zeal": {
+        "metric": "soul_wars_zeal",
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "score": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "guardians_of_the_rift": {
+        "metric": "guardians_of_the_rift",
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "score": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "colosseum_glory": {
+        "metric": "colosseum_glory",
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "score": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "collections_logged": {
+        "metric": "collections_logged",
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "score": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      }
+    },
+    "computed": {
+      "ehp": {
+        "metric": "ehp",
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "value": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      },
+      "ehb": {
+        "metric": "ehb",
+        "rank": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        },
+        "value": {
+          "start": 12345678,
+          "end": 12345678,
+          "gained": 12345678
+        }
+      }
+    }
+  }
+}

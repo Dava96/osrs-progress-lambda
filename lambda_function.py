@@ -2,7 +2,7 @@ import json
 import requests
 import urllib.parse
 
-def get_playerData(username):
+def get_player_data(username):
     username = urllib.parse.unquote(username)
 
     if not username:
@@ -16,8 +16,14 @@ def get_playerData(username):
 
     return response.json()
 
+def is_player_active(response):
+    overall_gained = response['data']['skills']['overall']['experience']['gained']
+    if overall_gained == 0:
+        return False
+
+    return True
+
 def lambda_handler(event, context):
-    print("Received event: " + json.dumps(event, indent=2))
     message = 'Hello from Lambda!'
 
     # Return a response
