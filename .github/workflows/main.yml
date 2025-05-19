@@ -38,7 +38,7 @@ jobs:
       - name: Install Lambda dependencies and package
         run: |
           mkdir -p lambda_package
-          pip install --target=lambda_package discord-webhook requests urllib.parse json
+          pip install --target=lambda_package discord-webhook requests
           cp lambda_function.py lambda_package/
           cd lambda_package
           zip -r ../function.zip .
