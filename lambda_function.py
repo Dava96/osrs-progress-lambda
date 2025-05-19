@@ -105,14 +105,14 @@ def lambda_handler(event, context):
             players[username] = merge_player_data(username, response)
 
 
-    if len(players) == 0:
-        print("No active players found.")
-        return {
-            'statusCode': 200,
-            'body': json.dumps({
-                'message': 'No active players found.',
-            })
-        }
+#     if len(players) == 0:
+#         print("No active players found.")
+#         return {
+#             'statusCode': 200,
+#             'body': json.dumps({
+#                 'message': 'No active players found.',
+#             })
+#         }
 
     print(sort_players_by(players, 'experience_gains'))
     # Return a response
