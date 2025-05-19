@@ -1,4 +1,5 @@
 import json
+import os
 import requests
 import urllib.parse
 from discord_webhook import DiscordWebhook, DiscordEmbed
