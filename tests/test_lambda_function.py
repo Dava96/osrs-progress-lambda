@@ -7,7 +7,10 @@ from lambda_function import lambda_handler, get_player_data, is_player_active, f
 from discord_webhook import DiscordEmbed
 
 class TestLambdaHandler(unittest.TestCase):
-    @patch.dict(os.environ, {'WEBHOOK_URL': 'http://mockwebhookurl.com/test'})
+    @patch.dict(os.environ, {
+        'WEBHOOK_URL': 'http://mockwebhookurl.com/test',
+        'USERNAMES': 'PlayerOne,PlayerTwo'
+    })
     @patch('lambda_function.execute_discord_webhooks')
     def test_lambda_handler_success_with_players(self, mock_execute_webhooks):
         mock_player_data = {
@@ -32,15 +35,18 @@ class TestLambdaHandler(unittest.TestCase):
             self.assertEqual(response['statusCode'], 200)
             body = json.loads(response['body'])
             self.assertEqual(body['message'], 'Hello from Lambda!')
-            mock_get_player_data.assert_called()
+            self.assertEqual(mock_get_player_data.call_count, 2)
             mock_execute_webhooks.assert_called_once()
 
-    @patch.dict(os.environ, {'WEBHOOK_URL': 'http://mockwebhookurl.com/test'})
+    @patch.dict(os.environ, {
+        'WEBHOOK_URL': 'http://mockwebhookurl.com/test',
+        'USERNAMES': 'InactiveUser'
+    })
     @patch('lambda_function.execute_discord_webhooks')
     def test_lambda_handler_no_active_players(self, mock_execute_webhooks):
         mock_inactive_player_data = {
             'data': {
-                'skills': {'overall': {'experience': {'gained': 0}}},
+                'skills': {'overall': {'metric': 'overall', 'experience': {'gained': 0}}},
                 'bosses': {},
                 'activities': {},
                 'computed': {'ehp': {'value': {'gained': 0}}, 'ehb': {'value': {'gained': 0}}}
@@ -53,20 +59,18 @@ class TestLambdaHandler(unittest.TestCase):
             self.assertEqual(response['statusCode'], 200)
             mock_execute_webhooks.assert_not_called()
 
-    @patch.dict(os.environ, {}, clear=True)
-    @patch('lambda_function.get_player_data') # Keep this mock
-    @patch('lambda_function.is_player_active', return_value=False) # Mock is_player_active to prevent 'data' KeyError
+    @patch.dict(os.environ, {'USERNAMES': 'UserForMissingWebhookTest'})
+    @patch('lambda_function.get_player_data')
+    @patch('lambda_function.is_player_active', return_value=False)
     @patch('builtins.print')
     def test_lambda_handler_missing_webhook_url(self, mock_print, mock_is_player_active, mock_get_player_data):
-        # Ensure get_player_data returns something that won't cause an error before webhook_url is checked
-        # if is_player_active is not mocked. Since we mock is_player_active, this is less critical.
-        mock_get_player_data.return_value = {'data': {'skills': {'overall': {'experience': {'gained': 0}}}}} # Minimal valid for no active players
-
+        mock_get_player_data.return_value = {
+            'data': {'skills': {'overall': {'metric': 'overall', 'experience': {'gained': 0}}}}
+        }
         event = {}
         context = None
         with self.assertRaises(KeyError) as context_manager:
             lambda_handler(event, context)
-        # Now it should fail on os.environ['WEBHOOK_URL']
         self.assertEqual(str(context_manager.exception), "'WEBHOOK_URL'")
 
 class TestIsPlayerActive(unittest.TestCase):

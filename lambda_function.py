@@ -226,8 +226,7 @@ def execute_discord_webhooks(embeds_to_send, webhook_url):
 
 def lambda_handler(event, context):
     players = {}
-    usernames_to_fetch = os.environ.get('USERNAMES').split(',')
-    usernames_to_fetch = ['keezy', 'Horadrims', 'weekend', 'iamironstorm', 'killa 1771']
+    usernames_to_fetch = os.environ['USERNAMES'].split(',')
     for username in usernames_to_fetch:
         response = get_player_data(username)
         if response.get('error'):
