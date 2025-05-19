@@ -1,6 +1,7 @@
 import json
 import requests
 import urllib.parse
+from discord_webhook import DiscordWebhook, DiscordEmbed
 
 def get_player_data(username):
     username = urllib.parse.unquote(username)

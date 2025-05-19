@@ -27,7 +27,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
+      - name: Install test dependencies
         run: |
           pip install awscli pytest requests
 
@@ -35,15 +35,21 @@ jobs:
         run: |
           python -m unittest discover -s ./tests -p 'test_*.py'
 
+      - name: Install Lambda dependencies and package
+        run: |
+          mkdir -p lambda_package
+          pip install --target=lambda_package discord-webhook requests
+          cp lambda_function.py lambda_package/
+          cd lambda_package
+          zip -r ../function.zip .
+          cd ..
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:
           aws-region: ${{ env.AWS_REGION }}
           role-to-assume: ${{ env.AWS_ROLE_TO_ASSUME }}
           role-session-name: GitHubActionsLambdaDeployment
-
-      - name: Zip the Lambda function
-        run: zip function.zip lambda_function.py
 
       - name: Check if Lambda function exists
         id: check_lambda
@@ -69,4 +75,4 @@ jobs:
           fi
 
       - name: Clean up
-        run: rm function.zip
+        run: rm -rf function.zip lambda_package
