@@ -60,10 +60,13 @@ def filter_activity_gains(response):
     return activity_gains
 
 def get_efficiency_data(response):
+    ehp = response['data']['computed']['ehp']['value']['gained']
+    ehb = response['data']['computed']['ehb']['value']['gained']
     efficiency_data = []
     efficiency_data.append({
-        'ehp': response['data']['computed']['ehp']['value']['gained'],
-        'ehb': response['data']['computed']['ehb']['value']['gained']
+        'ehp': ehp,
+        'ehb': ehb,
+        'gained': ehp + ehb
     })
     return efficiency_data
 
@@ -79,14 +82,17 @@ def merge_player_data(username, response):
     return player_data
 
 def sort_players_by(players, sort_by = 'experience_gains'):
-     sorted_players = dict(
+    if len(players) == 1:
+        return players
+
+    sorted_players = dict(
             sorted(
                 players.items(),
                 key=lambda item: sum(skill['gained'] for skill in item[1][sort_by]),
                 reverse=True
             )
         )
-     return sorted_players
+    return sorted_players
 
 def lambda_handler(event, context):
     players = {}
@@ -97,6 +103,16 @@ def lambda_handler(event, context):
             continue
         if is_player_active(response):
             players[username] = merge_player_data(username, response)
+
+
+    if len(players) == 0:
+        print("No active players found.")
+        return {
+            'statusCode': 200,
+            'body': json.dumps({
+                'message': 'No active players found.',
+            })
+        }
 
     print(sort_players_by(players, 'experience_gains'))
     # Return a response
