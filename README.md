@@ -25,8 +25,10 @@ Player Embed
 1. Set the following environment variables in Lambda:
    - `USERNAMES`: Comma-separated list of OSRS usernames
    - `WEBHOOK_URL`: Discord webhook URL
-   - `SEND_PLAYER_EMBED`: true/false - Defaults to true
-   - `SEND_RANKING_EMBED`: true/false - Default to true
+   - `SEND_PLAYER_EMBED`: `true`, `false` - Defaults to `true`
+   - `SEND_RANKING_EMBED`: `true`,`false` - Default to `true`
+   - `SORT_BY`: `experience_gains`, `boss_gains`, `activity_gains` - Defaults to `experience_gains`
+   - `PERIOD`: `five_min` `day`, `week`, `month` - Defaults to `day`
 
 2. Deploy using your preferred method (e.g., GitHub Actions).
 
