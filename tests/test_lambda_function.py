@@ -9,7 +9,9 @@ from discord_webhook import DiscordEmbed
 class TestLambdaHandler(unittest.TestCase):
     @patch.dict(os.environ, {
         'WEBHOOK_URL': 'http://mockwebhookurl.com/test',
-        'USERNAMES': 'PlayerOne,PlayerTwo'
+        'USERNAMES': 'PlayerOne,PlayerTwo',
+        'SEND_RANKING_EMBED': 'true',
+        'SEND_PLAYER_EMBED': 'true'
     })
     @patch('lambda_function.execute_discord_webhooks')
     def test_lambda_handler_success_with_players(self, mock_execute_webhooks):
@@ -37,6 +39,96 @@ class TestLambdaHandler(unittest.TestCase):
             self.assertEqual(body['message'], 'Hello from Lambda!')
             self.assertEqual(mock_get_player_data.call_count, 2)
             mock_execute_webhooks.assert_called_once()
+
+    @patch.dict(os.environ, {
+        'WEBHOOK_URL': 'http://mockwebhookurl.com/test',
+        'USERNAMES': 'PlayerOne,PlayerTwo',
+        'SEND_RANKING_EMBED': 'false',
+        'SEND_PLAYER_EMBED': 'true'
+    })
+    @patch('lambda_function.execute_discord_webhooks')
+    def test_lambda_handler_only_player_embeds(self, mock_execute_webhooks):
+        mock_player_data = {
+            'data': {
+                'skills': {
+                    'overall': {'metric': 'overall', 'experience': {'gained': 1000}},
+                    'attack': {'metric': 'attack', 'experience': {'gained': 500}},
+                    'strength': {'metric': 'strength', 'experience': {'gained': 500}}
+                },
+                'bosses': {},
+                'activities': {},
+                'computed': {
+                    'ehp': {'value': {'gained': 1.0}},
+                    'ehb': {'value': {'gained': 0.5}}
+                }
+            }
+        }
+        with patch('lambda_function.get_player_data', return_value=mock_player_data):
+            event = {}
+            context = None
+            response = lambda_handler(event, context)
+            self.assertEqual(response['statusCode'], 200)
+            mock_execute_webhooks.assert_called_once()
+
+    @patch.dict(os.environ, {
+        'WEBHOOK_URL': 'http://mockwebhookurl.com/test',
+        'USERNAMES': 'PlayerOne,PlayerTwo',
+        'SEND_RANKING_EMBED': 'true',
+        'SEND_PLAYER_EMBED': 'false'
+    })
+    @patch('lambda_function.execute_discord_webhooks')
+    def test_lambda_handler_only_ranking_embed(self, mock_execute_webhooks):
+        mock_player_data = {
+            'data': {
+                'skills': {
+                    'overall': {'metric': 'overall', 'experience': {'gained': 1000}},
+                    'attack': {'metric': 'attack', 'experience': {'gained': 500}},
+                    'strength': {'metric': 'strength', 'experience': {'gained': 500}}
+                },
+                'bosses': {},
+                'activities': {},
+                'computed': {
+                    'ehp': {'value': {'gained': 1.0}},
+                    'ehb': {'value': {'gained': 0.5}}
+                }
+            }
+        }
+        with patch('lambda_function.get_player_data', return_value=mock_player_data):
+            event = {}
+            context = None
+            response = lambda_handler(event, context)
+            self.assertEqual(response['statusCode'], 200)
+            mock_execute_webhooks.assert_called_once()
+
+    @patch.dict(os.environ, {
+        'WEBHOOK_URL': 'http://mockwebhookurl.com/test',
+        'USERNAMES': 'PlayerOne,PlayerTwo',
+        'SEND_RANKING_EMBED': 'false',
+        'SEND_PLAYER_EMBED': 'false'
+    })
+    @patch('lambda_function.execute_discord_webhooks')
+    def test_lambda_handler_no_embeds_sent(self, mock_execute_webhooks):
+        mock_player_data = {
+            'data': {
+                'skills': {
+                    'overall': {'metric': 'overall', 'experience': {'gained': 1000}},
+                    'attack': {'metric': 'attack', 'experience': {'gained': 500}},
+                    'strength': {'metric': 'strength', 'experience': {'gained': 500}}
+                },
+                'bosses': {},
+                'activities': {},
+                'computed': {
+                    'ehp': {'value': {'gained': 1.0}},
+                    'ehb': {'value': {'gained': 0.5}}
+                }
+            }
+        }
+        with patch('lambda_function.get_player_data', return_value=mock_player_data):
+            event = {}
+            context = None
+            response = lambda_handler(event, context)
+            self.assertEqual(response['statusCode'], 200)
+            mock_execute_webhooks.assert_not_called()
 
     @patch.dict(os.environ, {
         'WEBHOOK_URL': 'http://mockwebhookurl.com/test',
@@ -214,6 +306,11 @@ class TestMergePlayerData(unittest.TestCase):
         self.assertTrue(isinstance(player_data['boss_gains'], list))
         self.assertTrue(isinstance(player_data['activity_gains'], list))
         self.assertTrue(isinstance(player_data['efficiency_data'], list))
+        # Check that efficiency_data contains 'ehp', 'ehb', and 'gained'
+        eff = player_data['efficiency_data'][0]
+        self.assertIn('ehp', eff)
+        self.assertIn('ehb', eff)
+        self.assertIn('gained', eff)
 
 class TestSortPlayersBy(unittest.TestCase):
     def setUp(self):

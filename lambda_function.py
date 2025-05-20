@@ -190,8 +190,8 @@ def build_player_embeds(players):
                 embed.add_embed_field(name=a['activity'].replace('_', ' ').capitalize(), value=f"{a['gained']:,} score", inline=False)
 
         eff = data['efficiency_data'][0]
-        embed.add_embed_field(name="EHP Gained", value=f"`{eff['ehp']:,}`", inline=False) # Changed to inline=False
-        embed.add_embed_field(name="EHB Gained", value=f"`{eff['ehb']:,}`", inline=False) # Changed to inline=False
+        embed.add_embed_field(name="EHP Gained", value=f"`{eff['ehp']:,}`", inline=False)
+        embed.add_embed_field(name="EHB Gained", value=f"`{eff['ehb']:,}`", inline=False)
         player_embed_list.append(embed)
     return player_embed_list
 
@@ -205,7 +205,7 @@ def execute_discord_webhooks(embeds_to_send, webhook_url):
         for i, embed_content in enumerate(embeds_to_send):
             current_embed_description = embed_content.title if embed_content and hasattr(embed_content, 'title') else f"Embed #{i+1}"
 
-            webhook = DiscordWebhook(url=webhook_url, username="Osrs Activity Bot") # Added username
+            webhook = DiscordWebhook(url=webhook_url, username="Osrs Activity Bot")
 
             webhook.add_embed(embed_content)
 
@@ -225,8 +225,12 @@ def execute_discord_webhooks(embeds_to_send, webhook_url):
         print(f"An unexpected error occurred sending Discord embed '{current_embed_description}': {e}")
 
 def lambda_handler(event, context):
-    players = {}
     usernames_to_fetch = os.environ['USERNAMES'].split(',')
+    webhook_url = os.environ['WEBHOOK_URL']
+    send_ranking_embed = os.environ.get('SEND_RANKING_EMBED', 'true').lower() == 'true'
+    send_player_embed = os.environ.get('SEND_PLAYER_EMBED', 'true').lower() == 'true'
+
+    players = {}
     for username in usernames_to_fetch:
         response = get_player_data(username)
         if response.get('error'):
@@ -235,7 +239,6 @@ def lambda_handler(event, context):
         if is_player_active(response):
             players[username] = merge_player_data(username, response)
 
-    webhook_url = os.environ['WEBHOOK_URL']
 
     if players:
         sorted_players = sort_players_by(players, 'experience_gains')
@@ -243,11 +246,12 @@ def lambda_handler(event, context):
         all_embeds_to_send = []
 
         ranking_embed = build_ranking_embed(sorted_players, sort_by='experience_gains')
-        if ranking_embed:
+        if ranking_embed and send_ranking_embed:
             all_embeds_to_send.append(ranking_embed)
 
-        player_embeds = build_player_embeds(sorted_players)
-        all_embeds_to_send.extend(player_embeds)
+        if send_player_embed and send_player_embed:
+            player_embeds = build_player_embeds(sorted_players)
+            all_embeds_to_send.extend(player_embeds)
 
         if all_embeds_to_send:
             execute_discord_webhooks(all_embeds_to_send, webhook_url)
