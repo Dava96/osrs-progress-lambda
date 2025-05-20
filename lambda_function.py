@@ -302,7 +302,7 @@ def lambda_handler(event, context):
     return {
         'statusCode': 200,
         'body': json.dumps({
-            'message': f"Data processed for {len(sorted_players)} active players.",
+            'message': f"Data processed for {len(players)} players.",
         })
     }
 
