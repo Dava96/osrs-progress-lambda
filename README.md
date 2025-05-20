@@ -1,4 +1,4 @@
-# Osrs Progress Discord Lambda
+# Osrs Progress Lambda
 
 This AWS Lambda function fetches Old School Runescape player progress and posts updates to a Discord channel via webhook.
 
