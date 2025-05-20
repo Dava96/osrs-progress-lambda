@@ -54,7 +54,6 @@ python -m unittest discover tests
 - `requests`
 - `discord-webhook`
 
-## License
-
-MIT
+## Thanks to
+https://github.com/wise-old-man/wise-old-man
 
