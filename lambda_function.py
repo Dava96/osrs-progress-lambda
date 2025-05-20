@@ -4,7 +4,7 @@ import requests
 import urllib.parse
 from discord_webhook import DiscordWebhook, DiscordEmbed
 
-def get_player_data(username, period):
+def get_player_data(username, period = 'day'):
     username = urllib.parse.unquote(username)
 
     if not username:
@@ -101,11 +101,11 @@ def _add_embed_field_if_data_exists(embed, name, data_list, formatter_func, inli
         value_str = "\n".join(formatter_func(item) for item in data_list)
         embed.add_embed_field(name=name, value=value_str, inline=inline)
 
-def build_ranking_embed(players, sort_by='experience_gains', period):
+def build_ranking_embed(players, period = 'day', sort_by = 'experience_gains'):
     """Builds a summary ranking embed, sorted by the given metric."""
     embed = DiscordEmbed(
         title=f"{period.capitalize()} Group Ranking by {sort_by.replace('_', ' ').title()}",
-        description="Here is the daily activity ranking for the group.",
+        description=f"Here is the {period.capitalize()} activity ranking for the group.",
         color="03b2f8"
     )
     embed.set_author(name="Osrs Activity Bot")
@@ -167,7 +167,7 @@ def build_ranking_embed(players, sort_by='experience_gains', period):
         embed.add_embed_field(name=field_name, value=field_value, inline=False)
     return embed
 
-def build_player_embeds(players, period):
+def build_player_embeds(players, period = 'day'):
     """Builds a list of individual embeds for each player."""
     player_embed_list = []
     for username, data in players.items():
@@ -230,6 +230,7 @@ def lambda_handler(event, context):
     send_ranking_embed = os.environ.get('SEND_RANKING_EMBED', 'true').lower() == 'true'
     send_player_embed = os.environ.get('SEND_PLAYER_EMBED', 'true').lower() == 'true'
     period = os.environ.get('PERIOD', 'day')
+    sort_by = os.environ.get('SORT_BY', 'experience_gains')
 
     players = {}
     for username in usernames_to_fetch:
@@ -246,7 +247,7 @@ def lambda_handler(event, context):
 
         all_embeds_to_send = []
 
-        ranking_embed = build_ranking_embed(sorted_players, sort_by='experience_gains', period)
+        ranking_embed = build_ranking_embed(sorted_players, period, sort_by)
         if ranking_embed and send_ranking_embed:
             all_embeds_to_send.append(ranking_embed)
 
