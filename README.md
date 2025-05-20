@@ -23,8 +23,8 @@ Player Embed
 ## Usage
 
 1. Set the following environment variables in Lambda:
-   - `USERNAMES`: Comma-separated list of OSRS usernames
-   - `WEBHOOK_URL`: Discord webhook URL
+   - `USERNAMES`: Comma-separated list of OSRS usernames - Required
+   - `WEBHOOK_URL`: Discord webhook URL - Required
    - `SEND_PLAYER_EMBED`: `true`, `false` - Defaults to `true`
    - `SEND_RANKING_EMBED`: `true`,`false` - Default to `true`
    - `SORT_BY`: `experience_gains`, `boss_gains`, `activity_gains` - Defaults to `experience_gains`
