@@ -7,7 +7,7 @@ on:
 
 env:
   AWS_REGION: eu-west-1
-  LAMBDA_FUNCTION_NAME: GroupIronmanLambda
+  LAMBDA_FUNCTION_NAME: OsrsProgressLambda
   AWS_ROLE_TO_ASSUME: arn:aws:iam::491234348360:role/group-ironman-lambda-role
 
 permissions:
