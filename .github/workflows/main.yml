@@ -69,7 +69,7 @@ jobs:
               --handler lambda_function.lambda_handler --zip-file fileb://function.zip
           else
             echo "Updating Lambda function..."
-            aws lambda update-function-code > dev/null \
+            aws lambda update-function-code > /dev/null \
               --function-name ${{ env.LAMBDA_FUNCTION_NAME }} \
               --zip-file fileb://function.zip --publish
           fi
