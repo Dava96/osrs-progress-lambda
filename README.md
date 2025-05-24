@@ -30,7 +30,7 @@ Player Embed
    - `SORT_BY`: `experience_gains`, `boss_gains`, `activity_gains` - Defaults to `experience_gains`
    - `PERIOD`: `five_min` `day`, `week`, `month` - Defaults to `day`
 
-2. Deploy using your preferred method (e.g., GitHub Actions).
+2. https://github.com/Dava96/osrs-progress-lambda/wiki
 
 ## Local Installation
 
