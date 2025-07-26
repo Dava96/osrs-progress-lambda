@@ -12,6 +12,7 @@ DEFAULT_SORT_BY = "experience_gains"
 DEFAULT_SEND_RANKING_EMBED = "true"
 DEFAULT_SEND_PLAYER_EMBED = "true"
 REQUEST_TIMEOUT_SECONDS = 10
+DEFAULT_SEND_UPDATE_REQUEST = "false"
 
 # --- Helper Functions ---
 
@@ -49,6 +50,24 @@ def _filter_gains(
     return gains
 
 # --- Data Fetching and Processing ---
+
+def send_player_update(username: str):
+    parsedUsername = urllib.parse.unquote(username)
+    if not parsedUsername:
+        return {"error": "Username is empty"}
+    url = f"{WISE_OLD_MAN_API_BASE_URL}{parsedUsername}"
+    try:
+        response = requests.post(url)
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.HTTPError as http_err:
+        return {"error": f"HTTP error occurred: {http_err}", "status_code": response.status_code}
+    except requests.exceptions.Timeout:
+        return {"error": f"Request timed out after {REQUEST_TIMEOUT_SECONDS} seconds.", "status_code": 408}
+    except requests.exceptions.RequestException as req_err:
+        return {"error": f"Request error occurred: {req_err}", "status_code": 500}
+    except json.JSONDecodeError:
+        return {"error": "Failed to decode JSON response from API.", "status_code": 500}
 
 def get_player_data(username: str, period: str = DEFAULT_PERIOD) -> Dict[str, Any]:
     username = urllib.parse.unquote(username)
@@ -266,6 +285,7 @@ def lambda_handler(event, context):
     send_player_embed = os.environ.get('SEND_PLAYER_EMBED', DEFAULT_SEND_PLAYER_EMBED).lower() == 'true'
     period = os.environ.get('PERIOD', DEFAULT_PERIOD)
     sort_by = os.environ.get('SORT_BY', DEFAULT_SORT_BY)
+    send_player_update_request = os.environ.get("SEND_PLAYER_UPDATE", DEFAULT_SEND_UPDATE_REQUEST).lower == 'true'
 
     if not usernames_to_fetch or not webhook_url:
         print("USERNAMES and WEBHOOK_URL environment variables are required.")
@@ -273,6 +293,9 @@ def lambda_handler(event, context):
 
     players = {}
     for username in usernames_to_fetch:
+        if send_player_update_request:
+            send_player_update(username)
+
         response = get_player_data(username, period)
         if response.get('error'):
             print(f"Error fetching data for {username}: {response['error']}")
