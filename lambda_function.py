@@ -57,7 +57,7 @@ def send_player_update(username: str):
         return {"error": "Username is empty"}
     url = f"{WISE_OLD_MAN_API_BASE_URL}{parsedUsername}"
     try:
-        response = requests.post(url)
+        response = requests.post(url, {})
         response.raise_for_status()
         return response.json()
     except requests.exceptions.HTTPError as http_err:
@@ -285,7 +285,7 @@ def lambda_handler(event, context):
     send_player_embed = os.environ.get('SEND_PLAYER_EMBED', DEFAULT_SEND_PLAYER_EMBED).lower() == 'true'
     period = os.environ.get('PERIOD', DEFAULT_PERIOD)
     sort_by = os.environ.get('SORT_BY', DEFAULT_SORT_BY)
-    send_player_update_request = os.environ.get("SEND_PLAYER_UPDATE", DEFAULT_SEND_UPDATE_REQUEST).lower == 'true'
+    send_player_update_request = os.environ.get("SEND_PLAYER_UPDATE", DEFAULT_SEND_UPDATE_REQUEST).lower() == 'true'
 
     if not usernames_to_fetch or not webhook_url:
         print("USERNAMES and WEBHOOK_URL environment variables are required.")
