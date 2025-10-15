@@ -33,13 +33,15 @@ def _filter_gains(
     source: Optional[Dict[str, Any]],
     item_name_key: str,
     gained_path: List[str],
-    result_item_name: str
+    result_item_name: str,
+    exclude: Optional[set] = None
 ) -> List[Dict[str, Any]]:
     gains = []
     if not isinstance(source, dict):
         return gains
-    for item in source.values():
-        if not isinstance(item, dict):
+    exclude = exclude or set()
+    for key, item in source.items():
+        if key in exclude or not isinstance(item, dict):
             continue
         gained = _extract_nested_value(item, gained_path, 0)
         if isinstance(gained, (int, float)) and gained > 0:
@@ -93,7 +95,7 @@ def is_player_active(response: Dict[str, Any]) -> bool:
 
 def filter_experience_gains(response: Dict[str, Any]) -> List[Dict[str, Any]]:
     skills = _extract_nested_value(response, ['data', 'skills'], {})
-    return _filter_gains(skills, 'metric', ['experience', 'gained'], 'skill')
+    return _filter_gains(skills, 'metric', ['experience', 'gained'], 'skill', exclude={'overall'})
 
 def filter_boss_gains(response: Dict[str, Any]) -> List[Dict[str, Any]]:
     bosses = _extract_nested_value(response, ['data', 'bosses'], {})
