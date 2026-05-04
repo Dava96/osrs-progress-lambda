@@ -59,7 +59,7 @@ def send_player_update(username: str):
         return {"error": "Username is empty"}
     url = f"{WISE_OLD_MAN_API_BASE_URL}{parsedUsername}"
     try:
-        response = requests.post(url, {})
+        response = requests.post(url, {}, timeout=REQUEST_TIMEOUT_SECONDS)
         response.raise_for_status()
         return response.json()
     except requests.exceptions.HTTPError as http_err:
@@ -89,9 +89,12 @@ def get_player_data(username: str, period: str = DEFAULT_PERIOD) -> Dict[str, An
     except json.JSONDecodeError:
         return {"error": "Failed to decode JSON response from API.", "status_code": 500}
 
-def is_player_active(response: Dict[str, Any]) -> bool:
+def get_overall_experience_gained(response: Dict[str, Any]) -> Union[int, float]:
     overall_gained = _extract_nested_value(response, ['data', 'skills', 'overall', 'experience', 'gained'], 0)
-    return isinstance(overall_gained, (int, float)) and overall_gained > 0
+    return overall_gained if isinstance(overall_gained, (int, float)) else 0
+
+def is_player_active(response: Dict[str, Any]) -> bool:
+    return get_overall_experience_gained(response) > 0
 
 def filter_experience_gains(response: Dict[str, Any]) -> List[Dict[str, Any]]:
     skills = _extract_nested_value(response, ['data', 'skills'], {})
@@ -302,8 +305,13 @@ def lambda_handler(event, context):
         if response.get('error'):
             print(f"Error fetching data for {username}: {response['error']}")
             continue
-        if is_player_active(response):
-            players[username] = merge_player_data(username, response)
+
+        overall_xp_gained = get_overall_experience_gained(response)
+        if overall_xp_gained <= 0:
+            print(f"Skipping {username}: 0 overall XP gained for {period}.")
+            continue
+
+        players[username] = merge_player_data(username, response)
 
     if players:
         sorted_players = sort_players_by(players, sort_by)

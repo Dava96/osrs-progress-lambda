@@ -29,6 +29,7 @@ Player Embed
    - `SEND_RANKING_EMBED`: `true`,`false` - Default to `true`
    - `SORT_BY`: `experience_gains`, `boss_gains`, `activity_gains` - Defaults to `experience_gains`
    - `PERIOD`: `five_min` `day`, `week`, `month` - Defaults to `day`
+   - `SEND_PLAYER_UPDATE`: `true`, `false` - Defaults to `true`. Requests a Wise Old Man player update before fetching gains so the report uses the latest available data.
 
 2. https://github.com/Dava96/osrs-progress-lambda/wiki
 

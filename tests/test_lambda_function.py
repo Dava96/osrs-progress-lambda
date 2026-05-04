@@ -4,7 +4,7 @@ import os
 import requests
 from unittest.mock import patch
 from lambda_function import (
-    lambda_handler, get_player_data, is_player_active, filter_experience_gains,
+    lambda_handler, send_player_update, get_player_data, is_player_active, filter_experience_gains,
     filter_boss_gains, filter_activity_gains, get_efficiency_data, merge_player_data,
     sort_players_by, build_ranking_embed, build_player_embeds
 )
@@ -19,7 +19,8 @@ class TestLambdaHandler(unittest.TestCase):
         'WEBHOOK_URL': 'http://mockwebhookurl.com/test',
         'USERNAMES': 'PlayerOne,PlayerTwo',
         'SEND_RANKING_EMBED': 'true',
-        'SEND_PLAYER_EMBED': 'true'
+        'SEND_PLAYER_EMBED': 'true',
+        'SEND_PLAYER_UPDATE': 'false'
     })
     @patch('lambda_function.execute_discord_webhooks')
     def test_lambda_handler_embeds(self, mock_execute_webhooks):
@@ -43,7 +44,8 @@ class TestLambdaHandler(unittest.TestCase):
         'WEBHOOK_URL': 'http://mockwebhookurl.com/test',
         'USERNAMES': 'PlayerOne,PlayerTwo',
         'SEND_RANKING_EMBED': 'false',
-        'SEND_PLAYER_EMBED': 'true'
+        'SEND_PLAYER_EMBED': 'true',
+        'SEND_PLAYER_UPDATE': 'false'
     })
     @patch('lambda_function.execute_discord_webhooks')
     def test_lambda_handler_only_player_embeds(self, mock_execute_webhooks):
@@ -63,7 +65,8 @@ class TestLambdaHandler(unittest.TestCase):
         'WEBHOOK_URL': 'http://mockwebhookurl.com/test',
         'USERNAMES': 'PlayerOne,PlayerTwo',
         'SEND_RANKING_EMBED': 'true',
-        'SEND_PLAYER_EMBED': 'false'
+        'SEND_PLAYER_EMBED': 'false',
+        'SEND_PLAYER_UPDATE': 'false'
     })
     @patch('lambda_function.execute_discord_webhooks')
     def test_lambda_handler_only_ranking_embed(self, mock_execute_webhooks):
@@ -83,7 +86,8 @@ class TestLambdaHandler(unittest.TestCase):
         'WEBHOOK_URL': 'http://mockwebhookurl.com/test',
         'USERNAMES': 'PlayerOne,PlayerTwo',
         'SEND_RANKING_EMBED': 'false',
-        'SEND_PLAYER_EMBED': 'false'
+        'SEND_PLAYER_EMBED': 'false',
+        'SEND_PLAYER_UPDATE': 'false'
     })
     @patch('lambda_function.execute_discord_webhooks')
     def test_lambda_handler_no_embeds_sent(self, mock_execute_webhooks):
@@ -101,7 +105,8 @@ class TestLambdaHandler(unittest.TestCase):
 
     @patch.dict(os.environ, {
         'WEBHOOK_URL': 'http://mockwebhookurl.com/test',
-        'USERNAMES': 'InactiveUser'
+        'USERNAMES': 'InactiveUser',
+        'SEND_PLAYER_UPDATE': 'false'
     })
     @patch('lambda_function.execute_discord_webhooks')
     def test_lambda_handler_no_active_players(self, mock_execute_webhooks):
@@ -117,6 +122,70 @@ class TestLambdaHandler(unittest.TestCase):
             self.assertEqual(response['statusCode'], 200)
             mock_execute_webhooks.assert_not_called()
 
+    @patch.dict(os.environ, {
+        'WEBHOOK_URL': 'http://mockwebhookurl.com/test',
+        'USERNAMES': 'PlayerOne,PlayerTwo',
+        'SEND_RANKING_EMBED': 'false',
+        'SEND_PLAYER_EMBED': 'false'
+    }, clear=True)
+    @patch('lambda_function.execute_discord_webhooks')
+    @patch('lambda_function.send_player_update')
+    def test_lambda_handler_sends_player_update_by_default(self, mock_send_player_update, mock_execute_webhooks):
+        mock_player_data = {
+            'data': {
+                'skills': {'overall': {'metric': 'overall', 'experience': {'gained': 1000}}},
+                'bosses': {}, 'activities': {},
+                'computed': {'ehp': {'value': {'gained': 1.0}}, 'ehb': {'value': {'gained': 0.5}}}
+            }
+        }
+
+        with patch('lambda_function.get_player_data', return_value=mock_player_data):
+            response = lambda_handler({}, None)
+
+            self.assertEqual(response['statusCode'], 200)
+            self.assertEqual(mock_send_player_update.call_count, 2)
+            self.assertEqual([call.args[0] for call in mock_send_player_update.call_args_list], ['PlayerOne', 'PlayerTwo'])
+
+    @patch.dict(os.environ, {
+        'WEBHOOK_URL': 'http://mockwebhookurl.com/test',
+        'USERNAMES': 'ActiveUser,InactiveUser,AnotherActiveUser',
+        'SEND_RANKING_EMBED': 'false',
+        'SEND_PLAYER_EMBED': 'false',
+        'SEND_PLAYER_UPDATE': 'false'
+    })
+    @patch('lambda_function.execute_discord_webhooks')
+    def test_lambda_handler_skips_players_with_zero_overall_xp(self, mock_execute_webhooks):
+        active_player_data = {
+            'data': {
+                'skills': {'overall': {'metric': 'overall', 'experience': {'gained': 1000}}},
+                'bosses': {}, 'activities': {},
+                'computed': {'ehp': {'value': {'gained': 1.0}}, 'ehb': {'value': {'gained': 0.5}}}
+            }
+        }
+        inactive_player_data = {
+            'data': {
+                'skills': {'overall': {'metric': 'overall', 'experience': {'gained': 0}}},
+                'bosses': {}, 'activities': {},
+                'computed': {'ehp': {'value': {'gained': 0}}, 'ehb': {'value': {'gained': 0}}}
+            }
+        }
+
+        with patch('lambda_function.get_player_data', side_effect=[active_player_data, inactive_player_data, active_player_data]) as mock_get_player_data, \
+             patch('lambda_function.merge_player_data', side_effect=lambda username, response: {
+                 'username': username,
+                 'experience_gains': [],
+                 'boss_gains': [],
+                 'activity_gains': [],
+                 'efficiency_data': []
+             }) as mock_merge_player_data:
+            response = lambda_handler({}, None)
+
+            self.assertEqual(response['statusCode'], 200)
+            self.assertEqual(mock_get_player_data.call_count, 3)
+            self.assertEqual(mock_merge_player_data.call_count, 2)
+            self.assertEqual([call.args[0] for call in mock_merge_player_data.call_args_list], ['ActiveUser', 'AnotherActiveUser'])
+            mock_execute_webhooks.assert_not_called()
+
 class TestIsPlayerActive(unittest.TestCase):
     def setUp(self):
         self.active = load_fixture('active-player-gained-response.json')
@@ -125,6 +194,21 @@ class TestIsPlayerActive(unittest.TestCase):
     def test_is_player_active(self):
         self.assertTrue(is_player_active(self.active))
         self.assertFalse(is_player_active(self.inactive))
+
+class TestSendPlayerUpdate(unittest.TestCase):
+    @patch('requests.post')
+    def test_send_player_update_uses_timeout(self, mock_post):
+        mock_post.return_value.status_code = 200
+        mock_post.return_value.json.return_value = {'username': 'MyRandomPlayer'}
+
+        result = send_player_update('MyRandomPlayer')
+
+        self.assertEqual(result, {'username': 'MyRandomPlayer'})
+        mock_post.assert_called_once_with(
+            'https://api.wiseoldman.net/v2/players/MyRandomPlayer',
+            {},
+            timeout=10
+        )
 
 class TestGetPlayerData(unittest.TestCase):
     def setUp(self):
